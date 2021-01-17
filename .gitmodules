@@ -1,0 +1,3 @@
+[submodule "LTCSharp"]
+	path = LTCSharp
+	url = https://github.com/elliotwoods/LTCSharp.git
