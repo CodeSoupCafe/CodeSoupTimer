@@ -5,7 +5,6 @@ using Android.Media;
 using LinearTimeCodeGenerator;
 using LTCSharp;
 using Xamarin.Forms;
-using static LTCSharp.Classes;
 
 [assembly: Dependency(typeof(IWavePlayer))]
 
