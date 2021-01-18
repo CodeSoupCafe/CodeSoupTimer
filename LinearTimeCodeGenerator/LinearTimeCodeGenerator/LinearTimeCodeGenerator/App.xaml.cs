@@ -1,8 +1,6 @@
-﻿namespace Linear_TimeCode_Generator
+﻿namespace LinearTimeCodeGenerator
 {
-  using System;
   using Xamarin.Forms;
-  using Xamarin.Forms.Xaml;
 
   public partial class App : Application
   {

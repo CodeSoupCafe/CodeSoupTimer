@@ -148,9 +148,9 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Linear TimeCode Generator\Linear TimeCode Generator.csproj">
-      <Project>{34F12764-C241-4F56-8278-550C2F7995C1}</Project>
-      <Name>Linear TimeCode Generator</Name>
+    <ProjectReference Include="..\Linear TimeCode Generator\LinearTimeCodeGenerator.csproj">
+      <Project>{BD6DD435-F90D-49F6-9F9F-EF99B82CDA14}</Project>
+      <Name>LinearTimeCodeGenerator</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

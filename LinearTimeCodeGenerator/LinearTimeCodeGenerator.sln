@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linear TimeCode Generator.UWP", "Linear TimeCode Generator\Linear TimeCode Generator.UWP\Linear TimeCode Generator.UWP.csproj", "{F57A8A27-8147-45B9-85AB-BF492C52A3CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearTimeCodeGenerator.UWP", "LinearTimeCodeGenerator\LinearTimeCodeGenerator.UWP\LinearTimeCodeGenerator.UWP.csproj", "{F57A8A27-8147-45B9-85AB-BF492C52A3CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linear TimeCode Generator.Android", "Linear TimeCode Generator\Linear TimeCode Generator.Android\Linear TimeCode Generator.Android.csproj", "{08B7829C-48C8-489B-B3D4-95703CF18FEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearTimeCodeGenerator.Android", "LinearTimeCodeGenerator\LinearTimeCodeGenerator.Android\LinearTimeCodeGenerator.Android.csproj", "{08B7829C-48C8-489B-B3D4-95703CF18FEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linear TimeCode Generator.iOS", "Linear TimeCode Generator\Linear TimeCode Generator.iOS\Linear TimeCode Generator.iOS.csproj", "{AC37191A-92A5-4A15-9EB2-79415C81A4E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearTimeCodeGenerator.iOS", "LinearTimeCodeGenerator\LinearTimeCodeGenerator.iOS\LinearTimeCodeGenerator.iOS.csproj", "{AC37191A-92A5-4A15-9EB2-79415C81A4E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linear TimeCode Generator", "Linear TimeCode Generator\Linear TimeCode Generator\Linear TimeCode Generator.csproj", "{BD6DD435-F90D-49F6-9F9F-EF99B82CDA14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinearTimeCodeGenerator", "LinearTimeCodeGenerator\LinearTimeCodeGenerator\LinearTimeCodeGenerator.csproj", "{BD6DD435-F90D-49F6-9F9F-EF99B82CDA14}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LTCSharp", "..\LTCSharp\LTCSharp\LTCSharp.vcxproj", "{6625FC6E-AC51-4276-9D95-57AB78E21B03}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libltc", "..\LTCSharp\libltc\libltc.vcxproj", "{1888F07F-1021-46B9-9025-3AAA4EBF0A24}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LTCSharpWrapper", "LTCSharpWrapper", "{8C6156EA-09DC-40CD-936F-BC5682A10686}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Builds", "Builds", "{12B82F32-F630-44C2-A810-8D47686CD2E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -210,6 +212,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{F57A8A27-8147-45B9-85AB-BF492C52A3CD} = {12B82F32-F630-44C2-A810-8D47686CD2E1}
+		{08B7829C-48C8-489B-B3D4-95703CF18FEA} = {12B82F32-F630-44C2-A810-8D47686CD2E1}
+		{AC37191A-92A5-4A15-9EB2-79415C81A4E8} = {12B82F32-F630-44C2-A810-8D47686CD2E1}
 		{6625FC6E-AC51-4276-9D95-57AB78E21B03} = {8C6156EA-09DC-40CD-936F-BC5682A10686}
 		{1888F07F-1021-46B9-9025-3AAA4EBF0A24} = {8C6156EA-09DC-40CD-936F-BC5682A10686}
 	EndGlobalSection
