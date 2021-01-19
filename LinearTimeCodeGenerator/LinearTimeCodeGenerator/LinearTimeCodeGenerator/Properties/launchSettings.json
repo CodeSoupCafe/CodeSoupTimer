@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LinearTimeCodeGenerator": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

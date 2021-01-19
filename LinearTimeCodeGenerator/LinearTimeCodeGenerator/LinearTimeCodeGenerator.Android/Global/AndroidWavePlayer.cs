@@ -2,11 +2,11 @@
 using System.Diagnostics;
 using System.Threading;
 using Android.Media;
-using LinearTimeCodeGenerator;
+using LinearTimeCodeGenerator.Droid.Global;
 using LTCSharp;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(IWavePlayer))]
+[assembly: Dependency(typeof(AndroidWavePlayer))]
 
 namespace LinearTimeCodeGenerator.Droid.Global
 {
