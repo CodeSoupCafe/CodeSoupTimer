@@ -3,7 +3,8 @@ using System.Diagnostics;
 using System.Threading;
 using Android.Media;
 using LinearTimeCodeGenerator.Droid.Global;
-using LTCSharp;
+using LinearTimeCodeGenerator.LTCSharper;
+using Timecode4net;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(AndroidWavePlayer))]
@@ -40,11 +41,13 @@ namespace LinearTimeCodeGenerator.Droid.Global
 
       while (timer.Elapsed < new TimeSpan(0, 0, 5))
       {
-        ltcDataSource.SetTimecode(new Timecode(
-          timer.Elapsed.Hours,
-          timer.Elapsed.Minutes,
-          timer.Elapsed.Seconds,
-          (int)(timer.Elapsed.Milliseconds / 1000.0f * 30.0f)));
+        ltcDataSource.SetTimecode(
+          Timecode.FromString(
+          $"{timer.Elapsed.Hours:00}:" +
+          $"{timer.Elapsed.Minutes:00}:" +
+          $"{timer.Elapsed.Seconds:00};" +
+          $"{(int)(timer.Elapsed.Milliseconds / 1000.0f * 30.0f):00}",
+          frameRate: FrameRate.fps30, false));
 
         Thread.Sleep(10);
       }
@@ -59,37 +62,32 @@ namespace LinearTimeCodeGenerator.Droid.Global
 
   internal class LTCTimeCodeDataSource : MediaDataSource
   {
-    private readonly Encoder FEncoder;
+    public Encoder Encoder { get; private set; }
 
     public LTCTimeCodeDataSource()
     {
-      FEncoder = new Encoder(48000, 30, TVStandard.TV525_60i, BGFlags.NONE);
-    }
-
-    public Encoder Encoder
-    {
-      get
-      {
-        return this.FEncoder;
-      }
+      Encoder = new Encoder(48000, 30, FrameRate.fps30, BGFlags.NONE);
     }
 
     public override long Size { get; }
 
     public void SetTimecode(Timecode timecode)
     {
-      lock (FEncoder)
+      lock (Encoder)
       {
-        FEncoder.setTimecode(timecode);
+        Encoder.Timecode = timecode;
       }
     }
 
     public override int ReadAt(long position, byte[] buffer, int offset, int size)
     {
-      lock (FEncoder)
+      if (Encoder.Timecode == null)
+        return 0;
+
+      lock (Encoder)
       {
-        FEncoder.encodeFrame();
-        return FEncoder.getBuffer(buffer, offset);
+        Encoder.EncodeFrame();
+        return Encoder.GetBuffer(buffer, offset);
         //return size;
       }
     }
